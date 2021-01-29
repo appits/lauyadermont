@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <tree decoration-muted="state=='cancel'">
                     <field name="name" string="Nombre" />
-                    <field name="partner_id" string="Socio" domain="[('is_supplier','=',True)]"/>
+                    <field name="partner_id" string="Socio" domain="[('partner_share','=',True)]"/>
                     <field name="journal_id" string="Diario"/>
                     <field name="ref"/>
                     <field name="bank_account_id" string="Cuenta Bancaria"/>
@@ -100,7 +100,9 @@
                                 <group >
                                     <field name="name" string="Nombre" readonly="1" attrs="{'invisible':[('state', 'in', ('draft',('cancel')))]}"/>
                                     <field name="partner_id" string="Socio" domain="[('es_proveedor', '=', True)]" required="1" attrs="{'readonly': [('state', '=','available')]}"/>
+<!--
                                     <field name="is_supplier" string="Proveedor" attrs="{'readonly': [('state', '=','available')]}"/>
+-->
                                     <field name="journal_id"  string="Diario" placeholder="anticipo proveedor ..." attrs="{'readonly': [('state', '=', 'available')]}"/>
                                     <field name="bank_account_id"  string="Cuenta Bancaria" placeholder="Por ejemplo, Banesco ..."  required="1" attrs="{'readonly': [('state', '=', 'available')]}"/>
                                     <field name="move_id" string="Movimiento" attrs="{'readonly': [('state', '=', 'available')],'invisible': [('state','!=','available')]}" />
@@ -212,7 +214,9 @@
                                     <field name="name" string="Nombre" readonly="1"/>
                                     <field name="date_apply" string="Fecha Aplicación" required="1" attrs="{'readonly': [('state', '!=','available')]}"/>
                                     <field name="partner_id" string="Socio" required="1"  attrs="{'readonly': [('state', 'in',('available','paid','cancel'))]}"/>
+<!--
                                     <field name="is_supplier" string="Proveedor" readonly="1"/>
+-->
                                     <field name="amount_advance" string="Monto Anticipo" attrs="{'readonly': [('state', 'in',('available','paid','cancel'))]}"/>
                                     <field name="journal_id" string="Diario" attrs="{'invisible': [('state', '=', 'available')]}"/>
                                     <field name="apply_journal_id" string="Diario de Aplicación" attrs="{'invisible': [('state', '=', 'available')]}"/>
