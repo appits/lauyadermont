@@ -296,7 +296,7 @@
                                     <field name="apply_journal_id" string="Diario de Aplicación" attrs="{'invisible': [('state', '!=', 'available')]}"/>
                                 </group>
                                 <group>
-                                    <field name="invoice_id" string="Factura" required="1" domain="[('partner_id', '=', partner_id),('type', '=', 'out_invoice'),('state','=','posted')]" attrs="{'readonly': [('state', '!=','available')]}" options="{'no_create': True}"/>
+                                    <field name="invoice_id" string="Factura" required="1" domain="[('partner_id', '=', partner_id),('move_type', '=', 'out_invoice'),('state','=','posted')]" attrs="{'readonly': [('state', '!=','available')]}" options="{'no_create': True}"/>
                                     <field name="amount_invoice" string="Monto de Factura" readonly="1" force_save="1"/>
                                     <field name="invoice_currency" invisible="True"/>
                                     <field name="amount_available" string="Monto Disponible" readonly="1" force_save="1"/>
