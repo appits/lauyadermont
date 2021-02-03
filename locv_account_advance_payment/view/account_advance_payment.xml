@@ -27,7 +27,11 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name" string="Nombre"/>
+<!--
                     <field name="partner_id" string="Socio" domain="[('is_customer','=',True)]"/>
+-->
+                    <field name="partner_id" string="Socio" />
+
                     <field name="journal_id" string="Diario"/>
                     <field name="ref"/>
                     <field name="bank_account_id" string="Cuenta Bancaria"/>
@@ -67,7 +71,11 @@
             <field name="arch" type="xml">
                 <tree default_order="date_advance" create="false">
                     <field name="name" string="Nombre"/>
+<!--
                     <field name="partner_id" string="Socio" domain="[('is_customer','=',True)]"/>
+-->
+                    <field name="partner_id" string="Socio" />
+
                     <field name="journal_id" string="Diario"/>
                     <field name="ref"/>
                     <field name="bank_account_id" string="Cuenta Bancaria"/>
@@ -158,7 +166,9 @@
                                 <group >
                                     <field name="name" string="Nombre" readonly="1" attrs="{'invisible':[('state', 'in', ('draft',('cancel')))]}"/>
                                     <field name="partner_id" string="Socio" required="1" attrs="{'readonly': [('state', '=','available')]}" domain="[('es_cliente', '=', True)]"/>
+<!--
                                     <field name="is_customer" string="Cliente" attrs="{'readonly': [('state', '=','available')]}"/>
+-->
                                     <field name="journal_id" string="Diario" placeholder="anticipo cliente ..." attrs="{'readonly': [('state', '=', 'available')]}" force_save="1"/>
                                     <field name="bank_account_id" string="Banco" placeholder="Por ejemplo, Banesco ..." required="1" attrs="{'readonly': [('state', '=','available')]}"/>
                                 </group>
@@ -278,7 +288,9 @@
                                     <field name="name" string="Nombre" readonly="1"/>
                                     <field name="date_apply" string="Fecha Aplicación" required="1" attrs="{'readonly': [('state', '!=','available')]}"/>
                                     <field name="partner_id" string="Socio" required="1" attrs="{'readonly': [('state', '!=','available')]}"/>
+<!--
                                     <field name="is_customer" string="Cliente" attrs="{'readonly': [('state', '=','available')]}"/>
+-->
                                     <field name="amount_advance" string="Monto Anticipo" readonly="1" force_save="1"/>
                                     <field name="journal_id" string="Diario" attrs="{'invisible': [('state', '=', 'available')]}"/>
                                     <field name="apply_journal_id" string="Diario de Aplicación" attrs="{'invisible': [('state', '!=', 'available')]}"/>
