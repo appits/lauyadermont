@@ -23,8 +23,12 @@
 <!--
                     <field name="currency_company" invisible="True"/>
 -->
+<!--
                     <field name="sum_amount_available_dolares" readonly="1" force_save="1" attrs="{'invisible': [('move_type', 'not in', ('in_invoice', 'in_refund', 'in_receipt'))]}"/>
+-->
+<!--
                     <field name="foreign_currency" invisible="True"/>
+-->
                 </xpath>
             </field>
         </record>
@@ -52,8 +56,12 @@
 <!--
                     <field name="currency_company" invisible="True"/>
 -->
+<!--
                     <field name="sum_amount_available_dolares" readonly="1" force_save="1" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}"/>
+-->
+<!--
                     <field name="foreign_currency" invisible="True"/>
+-->
                 </xpath>
             </field>
         </record>
